@@ -1,0 +1,55 @@
+/* Utility classes */
+
+.orange-btn,
+.orange-outline-btn,
+.red-outline-btn,
+.saveBtn {
+    font-weight: var(--button) !important;
+    background-color: var(--color-primary) !important;
+    font-size: var(--sm) !important;
+    text-decoration: none !important;
+    color: var(--dark-text-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+    border-radius: 8px !important;
+}
+
+.orange-btn,
+.orange-outline-btn,
+.red-outline-btn,
+.gray-outline-btn {
+    display: block !important;
+}
+
+.orange-btn:hover {
+    background-color: var(--color-primary-interact) !important;
+}
+
+.orange-outline-btn {
+    border: 1px solid var(--color-primary) !important;
+    background-color: var(--cardBtnColor) !important;
+    color: var(--color-primary) !important;
+}
+
+.orange-outline-btn:hover {
+    background-color: var(--color-primary-btn-interact) !important;
+}
+
+.red-outline-btn {
+    border: 1px solid var(--color-secondary) !important;
+    background-color: var(--color-secondary-btn) !important;
+    color: var(--color-secondary) !important;
+}
+
+.red-outline-btn:hover {
+    background-color: var(--color-secondary-interact) !important;
+}
+
+.errors-message {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+.errors-message-dark {
+    color: var(--dark-text-primary);
+    background-color: var(--dark-bg-primary);
+}
