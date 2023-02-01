@@ -18,6 +18,7 @@ const AuthProviderWrapper = props => {
         const token = localStorage.getItem("authToken")
 
         if (token) {
+            setIsLoading(true)
             authService
                 .verify(token)
                 .then(({ data }) => {
@@ -41,6 +42,7 @@ const AuthProviderWrapper = props => {
         authService
             .refreshToken()
             .then(({ data }) => {
+
                 storeToken(data.refreshedToken)
                 authenticateUser()
             })
@@ -52,7 +54,7 @@ const AuthProviderWrapper = props => {
 
     useEffect(() => {
         authenticateUser()
-    }, [user])
+    }, [])
 
     return <AuthContext.Provider value={{
         storeToken, refreshToken, authenticateUser, logoutUser, user, isLoading

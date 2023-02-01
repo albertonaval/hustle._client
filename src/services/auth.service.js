@@ -39,9 +39,6 @@ class AuthService {
         return this.api.delete(`/delete/${id}`)
     }
 
-
-
-
 }
 
 

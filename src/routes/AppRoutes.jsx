@@ -22,7 +22,7 @@ const AppRoutes = () => {
             <Route element={<PrivateRoute />}>
                 <Route path="/dashboard" element={<Dashboard />} />
             </Route>
-        </Routes >
+        </Routes>
     )
 }
 

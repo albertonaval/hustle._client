@@ -10,14 +10,13 @@ class DashboardService {
             const storedToken = localStorage.getItem("authToken")
 
             if (storedToken) {
-                config.headers = { Authoritation: `Bearer ${storedToken}` }
+                config.headers = { Authorization: `Bearer ${storedToken}` }
             }
             return config
         })
     }
 
-
-    getDashboardByUserId() {
+    getDashboardByUser() {
         return this.api.get("/")
     }
 

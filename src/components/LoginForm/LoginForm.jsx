@@ -37,8 +37,7 @@ const LoginForm = () => {
         authService
             .login(loginData)
             .then(({ data }) => {
-                const tokenFromServer = data.authToken
-                storeToken(tokenFromServer)
+                storeToken(data.authToken)
                 authenticateUser()
                 navigate("/dashboard")
             })

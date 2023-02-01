@@ -5,6 +5,7 @@ import { AuthContext } from "../../context/auth.context"
 
 
 
+
 import dashboardServices from "../../services/dashboard.service"
 
 const Dashboard = () => {
@@ -13,12 +14,16 @@ const Dashboard = () => {
 
     const { user, logoutUser } = useContext(AuthContext)
 
+    console.log(user._id)
+
     const getDashboardData = () => {
         dashboardServices
-            .getDashboardByUserId(user._id)
-            .then(res =>
-                setDashboardData(res.data[0]))
-            .catch(err => console.error({ message: "Internal server error", err }))
+            .getDashboardByUser(user._id)
+            .then(res => {
+                console.log(user._id)
+                setDashboardData(res.data[0])
+            })
+            .catch(err => console.log({ message: "Internal server error:", err }))
     }
 
     useEffect(() => {
