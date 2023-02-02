@@ -1,0 +1,27 @@
+/* */
+
+
+.Header {
+    margin-left: 100px;
+}
+
+.headerInput,
+.headerInput-dark {
+    width: 100%;
+    padding-right: 80px;
+    border: none;
+    font-size: var(--xxxl);
+    line-height: 1.1;
+    font-weight: var(--slogan) !important;
+    color: var(--light-text-primary);
+}
+
+.headerInput::placeholder,
+.headerInput-dark::placeholder {
+    font-size: var(--slogan);
+}
+
+.headerInput:focus,
+.headerInput-dark:focus {
+    outline: none;
+}

@@ -1,39 +1,39 @@
 import { useContext, useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import Header from "../../components/Header/Header"
 import { AuthContext } from "../../context/auth.context"
-
-
-
-
-
+import { DarkModeContext } from "../../context/darkmode.context"
 import dashboardServices from "../../services/dashboard.service"
+import HeaderImage from "./HeaderImage"
+import HeaderTitle from "./HeaderTitle"
 
-const Dashboard = () => {
 
-    const [dashboardData, setDashboardData] = useState([])
 
-    const { user, logoutUser } = useContext(AuthContext)
 
-    const getDashboardData = () => {
+
+const Header = () => {
+    const [headerData, setHeaderData] = useState()
+
+
+    const { user } = useContext(AuthContext)
+    const { darkMode } = useContext(DarkModeContext)
+
+    const getHeaderData = () => {
         dashboardServices
             .getDashboardByUser(user._id)
             .then(res => {
-                console.log(user._id)
-                setDashboardData(res.data[0])
+
+                setHeaderData(res.data[0].header)
             })
             .catch(err => console.log({ message: "Internal server error:", err }))
     }
 
     useEffect(() => {
-        getDashboardData()
+        getHeaderData()
     }, [])
-
 
     return (
         <>
-            {!dashboardData ? (
+            {!headerData ? (
                 <Container>
                     <Row style={{ maxWidth: "700px", marginInline: "auto" }}>
                         <Col sm={{ offset: 3, span: 6 }}>
@@ -42,19 +42,17 @@ const Dashboard = () => {
                     </Row>
                 </Container>
             ) : (
-                <>
-                    <Header />
+                <header style={{ position: "relative" }}>
+                    <HeaderImage HeaderImage={headerData.image} />
+                    <HeaderTitle headerTitle={headerData.title} />
+                </header>
 
-                    <Link to="/" onClick={logoutUser} className="btn btn-dark">
-                        Log Out
-                    </Link>
-                </>
-            )
-            }
+            )}
         </>
 
     )
 
 }
 
-export default Dashboard
+
+export default Header
