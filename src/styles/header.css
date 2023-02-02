@@ -25,3 +25,27 @@
 .headerInput-dark:focus {
     outline: none;
 }
+
+.headerImg {
+    object-fit: cover;
+    width: 100%;
+    height: calc(130px + (200 - 130) * ((100vw - 500px) / (1600 - 500)));
+}
+
+
+.headerImageButton {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    transition: 0.5s ease;
+}
+
+.headerImageButton i {
+    font-size: var(--xl);
+    color: var(--color-primary-interact);
+    border-radius: 4px;
+    filter: drop-shadow(0 0 4px var(--text-primary));
+}

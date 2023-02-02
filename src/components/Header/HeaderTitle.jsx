@@ -27,8 +27,6 @@ const HeaderTitle = ({ headerTitle }) => {
         }
     })
 
-
-
     const handleTitle = e => {
         const range = document.getSelection().getRangeAt(0)
         setOffSet(range.startOffset)

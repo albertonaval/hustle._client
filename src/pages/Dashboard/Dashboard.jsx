@@ -20,7 +20,6 @@ const Dashboard = () => {
         dashboardServices
             .getDashboardByUser(user._id)
             .then(res => {
-                console.log(user._id)
                 setDashboardData(res.data[0])
             })
             .catch(err => console.log({ message: "Internal server error:", err }))

@@ -43,7 +43,7 @@ const Header = () => {
                 </Container>
             ) : (
                 <header style={{ position: "relative" }}>
-                    <HeaderImage HeaderImage={headerData.image} />
+                    <HeaderImage headerImage={headerData.image} setHeaderData={setHeaderData} />
                     <HeaderTitle headerTitle={headerData.title} />
                 </header>
 
