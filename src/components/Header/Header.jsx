@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { AuthContext } from "../../context/auth.context"
-import { DarkModeContext } from "../../context/darkmode.context"
+
 import dashboardServices from "../../services/dashboard.service"
 import HeaderImage from "./HeaderImage"
 import HeaderTitle from "./HeaderTitle"
@@ -11,7 +11,7 @@ const Header = () => {
 
 
     const { user } = useContext(AuthContext)
-    const { darkMode } = useContext(DarkModeContext)
+
 
     const getHeaderData = () => {
         dashboardServices
@@ -23,6 +23,7 @@ const Header = () => {
     }
 
     useEffect(() => {
+        // eslint-disable-next-line
         getHeaderData()
     }, [])
 

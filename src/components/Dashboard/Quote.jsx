@@ -18,7 +18,7 @@ const Quote = () => {
     useEffect(() => {
         setQuotes(quotesData)
         updateRandomNum()
-    })
+    }, [])
 
     const genNewQuote = e => {
         e.preventDefault()
