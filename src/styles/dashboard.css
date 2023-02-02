@@ -1,0 +1,81 @@
+.quoteBtn {
+    margin-left: 4px;
+}
+
+.quoteText {
+    font-size: var(--sm) !important;
+    font-style: italic;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2.25fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-height: 850px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.Callout,
+.Callout-dark {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+    background-color: var(--bg-navbar);
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: var(--text-primary);
+}
+
+.Callout-dark {
+    background-color: var(--dark-bg-navbar);
+    color: var(--dark-text-primary);
+}
+
+.Callout p,
+.Callout-dark p {
+    font-size: var(--lg);
+    margin-bottom: 4px;
+}
+
+.Callout div,
+.Callout-dark div {
+    font-style: italic;
+    font-size: var(--sm);
+    width: 90%;
+}
+
+.Callout input,
+.Callout-dark input {
+    border: none;
+    width: 100%;
+    background-color: var(--bg-navbar);
+    color: var(--text-primary);
+}
+
+.Callout-dark input {
+    background-color: var(--dark-bg-navbar);
+    color: var(--dark-text-primary);
+}
+
+.Callout button,
+.Callout-dark button {
+    background-color: transparent !important;
+    border: none !important;
+}

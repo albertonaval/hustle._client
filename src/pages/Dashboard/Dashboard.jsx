@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import Quote from "../../components/Dashboard/Quote"
 import Header from "../../components/Header/Header"
 import { AuthContext } from "../../context/auth.context"
 
@@ -43,6 +44,7 @@ const Dashboard = () => {
             ) : (
                 <>
                     <Header />
+                    <Quote />
 
                     <Link to="/" onClick={logoutUser} className="btn btn-dark">
                         Log Out
