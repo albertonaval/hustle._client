@@ -4,17 +4,15 @@ import { AuthContext } from "../../context/auth.context"
 import { DarkModeContext } from "../../context/darkmode.context"
 import dashboardServices from "../../services/dashboard.service"
 
-
-
 const HeaderTitle = ({ headerTitle }) => {
 
     const [title, setTitle] = useState(headerTitle)
     const [offset, setOffSet] = useState()
+    const titleRef = useRef()
 
     const { user } = useContext(AuthContext)
     const { darkMode } = useContext(DarkModeContext)
 
-    const titleRef = useRef()
 
     useLayoutEffect(() => {
         if (offset !== undefined && offset > 0) {

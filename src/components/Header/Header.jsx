@@ -6,10 +6,6 @@ import dashboardServices from "../../services/dashboard.service"
 import HeaderImage from "./HeaderImage"
 import HeaderTitle from "./HeaderTitle"
 
-
-
-
-
 const Header = () => {
     const [headerData, setHeaderData] = useState()
 
@@ -21,8 +17,7 @@ const Header = () => {
         dashboardServices
             .getDashboardByUser(user._id)
             .then(res => {
-
-                setHeaderData(res.data[0].header)
+                setHeaderData(res.data[0])
             })
             .catch(err => console.log({ message: "Internal server error:", err }))
     }
@@ -43,8 +38,8 @@ const Header = () => {
                 </Container>
             ) : (
                 <header style={{ position: "relative" }}>
-                    <HeaderImage headerImage={headerData.image} setHeaderData={setHeaderData} />
-                    <HeaderTitle headerTitle={headerData.title} />
+                    <HeaderImage headerImage={headerData.header.image} setHeaderData={setHeaderData} />
+                    <HeaderTitle headerTitle={headerData.header.title} />
                 </header>
 
             )}

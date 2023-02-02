@@ -38,13 +38,13 @@ const HeaderImgForm = ({ setHeaderData, setShowHeaderModal }) => {
         dashboardServices
             .getDashboardByUser(user._id)
             .then(res => {
-                console.log(res.data)
+
                 return dashboardServices.updateHeader(res.data[0]._id, headerImg)
             })
             .then(res => {
                 setHeaderImg({ image: res.data.cloudinary_url })
-                setHeaderData(res.data)
                 setShowHeaderModal(false)
+                setHeaderData(res.data)
             })
             .catch(err => console.log({ message: "Internal server error:", err }))
     }

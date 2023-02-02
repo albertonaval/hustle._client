@@ -3,8 +3,6 @@ import { Modal } from "react-bootstrap"
 import { DarkModeContext } from "../../context/darkmode.context"
 import HeaderImgForm from "./HeaderImgForm"
 
-
-
 const HeaderImage = ({ headerImage, setHeaderData }) => {
     const [showIcon, setShowIcon] = useState(false)
     const [showHeaderModal, setShowHeaderModal] = useState(false)
